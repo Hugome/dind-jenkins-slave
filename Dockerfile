@@ -23,7 +23,7 @@ RUN apt-get update -qq && apt-get install -qqy \
 RUN echo deb https://apt.dockerproject.org/repo ubuntu-trusty main > /etc/apt/sources.list.d/docker.list && \
     apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 
-ENV DOCKER_VERSION 1.9.1-0~trusty
+ENV DOCKER_VERSION 1.11.2-0~trusty
 
 # Install Docker from Docker Inc. repositories.
 RUN apt-get update && apt-get install -y docker-engine=$DOCKER_VERSION && rm -rf /var/lib/apt/lists/*
@@ -36,7 +36,6 @@ VOLUME /var/lib/docker
 # Make sure that the "jenkins" user from evarga's image is part of the "docker"
 # group. Needed to access the docker daemon's unix socket.
 RUN usermod -a -G docker jenkins
-
 
 # place the jenkins slave startup script into the container
 ADD jenkins-slave-startup.sh /
