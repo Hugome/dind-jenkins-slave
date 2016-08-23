@@ -10,7 +10,5 @@ ENV DOCKER_VERSION 1.12.1-0~trusty
 RUN adduser -D -h /home/jenkins -s /bin/sh jenkins
 RUN echo "jenkins:jenkins" | chpasswd
 
-USER jenkins
-
 ENTRYPOINT ["dockerd-entrypoint.sh"]
 CMD []
