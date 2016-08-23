@@ -3,7 +3,7 @@ FROM docker:dind
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apk update
-RUN apk add openjdk8-jre wget bash
+RUN apk add openjdk8-jre wget bash git openssh
 
 ENV DOCKER_VERSION 1.12.1-0~trusty
 
